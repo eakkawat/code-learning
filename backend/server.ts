@@ -1,6 +1,6 @@
-const express = require('express');
-const mongoose = require('mongoose');
-const userRoutes = require('./routes/userRoutes');
+import express from 'express';
+import mongoose from 'mongoose';
+import userRoutes from './routes/user.routes';
 
 const app = express();
 
@@ -11,10 +11,7 @@ app.use(express.json());
 app.use('/api', userRoutes);
 
 // Database connection
-mongoose.connect('mongodb://localhost:27017/mydatabase', {
-  useNewUrlParser: true,
-  useUnifiedTopology: true,
-});
+mongoose.connect('mongodb://localhost:27017/mydatabase', {});
 
 const db = mongoose.connection;
 db.on('error', console.error.bind(console, 'connection error:'));

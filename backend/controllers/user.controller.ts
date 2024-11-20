@@ -1,6 +1,7 @@
-const User = require('../models/User');
+import User from '../models/User';
+import { Request, Response } from 'express';
 
-exports.getAllUsers = async (req, res) => {
+const getAllUsers = async (req: Request, res: Response) => {
   try {
     const users = await User.find();
     res.json(users);
@@ -9,7 +10,7 @@ exports.getAllUsers = async (req, res) => {
   }
 };
 
-exports.createUser = async (req, res) => {
+const createUser = async (req: Request, res: Response) => {
   const user = new User({
     name: req.body.name,
     email: req.body.email,
@@ -22,3 +23,5 @@ exports.createUser = async (req, res) => {
     res.status(400).json({ message: error.message });
   }
 };
+
+export { getAllUsers, createUser };
