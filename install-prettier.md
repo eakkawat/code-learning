@@ -22,10 +22,4 @@ module.exports = {
 };
 ```
 
-4. Create a `.prettierrc.js` file in frontend folder, and add the following configuration:
-
-```javascript
-module.exports = {
-  ...require('../.prettierrc.js'),
-};
-```
+** Note: ** There no need to create a `.prettierrc.js` file in frontend folder, because it will automatically use the one in the root of the project.
