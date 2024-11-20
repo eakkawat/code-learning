@@ -1,12 +1,5 @@
 import axios from 'axios';
-
-// Define the type for the user object
-interface User {
-  id?: number;
-  name: string;
-  email: string;
-  // Add other properties as needed
-}
+import { User } from '../types/User';
 
 export const fetchUsers = async () => {
   const res = await axios.get('/api/users');
