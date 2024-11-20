@@ -1,7 +1,7 @@
-import React, { useEffect, useState } from 'react';
+import { useEffect, useState } from 'react';
 import { fetchUsers } from '../actions/userActions';
 
-const UserList = () => {
+function UserList() {
   const [users, setUsers] = useState([]);
 
   useEffect(() => {
@@ -23,6 +23,6 @@ const UserList = () => {
       </ul>
     </div>
   );
-};
+}
 
 export default UserList;
