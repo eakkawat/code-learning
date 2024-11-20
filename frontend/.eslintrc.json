@@ -22,7 +22,8 @@
   "rules": {
     "quotes": ["off", "double"],
     "react/react-in-jsx-scope": ["off"],
-    "react/jsx-props-no-spreading": ["warn"]
+    "react/jsx-props-no-spreading": ["warn"],
+    "import/extensions": ["never"]
   },
   "ignorePatterns": ["node_modules", "vite.config.ts", "dist"]
 }
