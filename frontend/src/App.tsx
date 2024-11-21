@@ -1,5 +1,4 @@
 import { Container } from '@mantine/core';
-import UserList from '@/components/UserList';
 import Quiz from '@/components/Quiz';
 
 const sampleQuiz = {
@@ -31,7 +30,6 @@ function App() {
   return (
     <Container size="sm" py="xl">
       <Quiz id={sampleQuiz.id} title={sampleQuiz.title} questions={sampleQuiz.questions} />
-      <UserList />
     </Container>
   );
 }

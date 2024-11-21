@@ -3,6 +3,7 @@ import { useState } from 'react';
 import Answer from './Answer';
 
 interface QuestionProps {
+  // eslint-disable-next-line react/no-unused-prop-types
   id: string;
   question: string;
   options: string[];
@@ -10,7 +11,7 @@ interface QuestionProps {
   onAnswered: () => void;
 }
 
-export default function Question({ id, question, options, correctAnswer, onAnswered }: QuestionProps) {
+export default function Question({ question, options, correctAnswer, onAnswered }: QuestionProps) {
   const [selectedAnswer, setSelectedAnswer] = useState<string | null>(null);
   const [showResult, setShowResult] = useState(false);
 
@@ -33,7 +34,7 @@ export default function Question({ id, question, options, correctAnswer, onAnswe
       <Stack gap="sm">
         {options.map((option) => (
           <Button
-            key={id}
+            key={option}
             variant={selectedAnswer === option ? 'filled' : 'light'}
             onClick={() => setSelectedAnswer(option)}
             fullWidth

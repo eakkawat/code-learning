@@ -1,12 +1,16 @@
 import axios from 'axios';
-import { User } from '../types/User';
+import { User } from '@/types/User';
+
+const axiosInstance = axios.create({
+  baseURL: 'http://localhost:5000',
+});
 
 export const fetchUsers = async () => {
-  const res = await axios.get('/api/users');
+  const res = await axiosInstance.get('/api/v1/users');
   return res.data;
 };
 
 export const createUser = async (user: User) => {
-  const res = await axios.post('/api/users', user);
+  const res = await axiosInstance.post('/api/v1/users', user);
   return res.data;
 };
