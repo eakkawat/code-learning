@@ -6,7 +6,7 @@ const getAllUsers = async (req: Request, res: Response) => {
     const users = await User.find();
     res.json(users);
   } catch (error) {
-    res.status(500).json({ message: error.message });
+    res.status(500).json({ message: (error as any).message });
   }
 };
 
@@ -20,7 +20,7 @@ const createUser = async (req: Request, res: Response) => {
     const newUser = await user.save();
     res.status(201).json(newUser);
   } catch (error) {
-    res.status(400).json({ message: error.message });
+    res.status(400).json({ message: (error as any).message });
   }
 };
 
