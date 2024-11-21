@@ -1,35 +1,30 @@
+import { Container } from '@mantine/core';
 import UserList from '@/components/UserList';
 import Quiz from '@/components/Quiz';
-import { Container } from '@mantine/core';
 
 const sampleQuiz = {
-  id: "1",
-  title: "JavaScript Fundamentals",
+  id: '1',
+  title: 'JavaScript Fundamentals',
   questions: [
     {
-      id: "q1",
-      question: "What is JavaScript primarily used for?",
-      options: [
-        "Web Development",
-        "Database Management",
-        "Operating System Development",
-        "Mobile App Development"
-      ],
-      correctAnswer: "Web Development"
+      id: 'q1',
+      question: 'What is JavaScript primarily used for?',
+      options: ['Web Development', 'Database Management', 'Operating System Development', 'Mobile App Development'],
+      correctAnswer: 'Web Development',
     },
     {
-      id: "q2",
-      question: "Which keyword is used to declare variables in JavaScript?",
-      options: ["var", "let", "const", "All of the above"],
-      correctAnswer: "All of the above"
+      id: 'q2',
+      question: 'Which keyword is used to declare variables in JavaScript?',
+      options: ['var', 'let', 'const', 'All of the above'],
+      correctAnswer: 'All of the above',
     },
     {
-      id: "q3",
+      id: 'q3',
       question: "What is the result of 2 + '2' in JavaScript?",
-      options: ["4", "22", "NaN", "Error"],
-      correctAnswer: "22"
-    }
-  ]
+      options: ['4', '22', 'NaN', 'Error'],
+      correctAnswer: '22',
+    },
+  ],
 };
 
 function App() {

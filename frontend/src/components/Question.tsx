@@ -10,12 +10,7 @@ interface QuestionProps {
   onAnswered: () => void;
 }
 
-export default function Question({ 
-  question, 
-  options, 
-  correctAnswer,
-  onAnswered 
-}: QuestionProps) {
+export default function Question({ id, question, options, correctAnswer, onAnswered }: QuestionProps) {
   const [selectedAnswer, setSelectedAnswer] = useState<string | null>(null);
   const [showResult, setShowResult] = useState(false);
 
@@ -32,11 +27,13 @@ export default function Question({
 
   return (
     <Box>
-      <Text size="lg" mb="md">{question}</Text>
-      <Stack spacing="sm">
+      <Text size="lg" mb="md">
+        {question}
+      </Text>
+      <Stack gap="sm">
         {options.map((option) => (
           <Button
-            key={option}
+            key={id}
             variant={selectedAnswer === option ? 'filled' : 'light'}
             onClick={() => setSelectedAnswer(option)}
             fullWidth
@@ -45,19 +42,13 @@ export default function Question({
           </Button>
         ))}
       </Stack>
-      <Group position="right" mt="md">
-        <Button
-          onClick={handleSubmit}
-          disabled={!selectedAnswer}
-        >
+      <Group justify="end" mt="md">
+        <Button onClick={handleSubmit} disabled={!selectedAnswer}>
           Submit Answer
         </Button>
       </Group>
       {showResult && selectedAnswer && (
-        <Answer 
-          isCorrect={selectedAnswer === correctAnswer}
-          correctAnswer={correctAnswer}
-        />
+        <Answer isCorrect={selectedAnswer === correctAnswer} correctAnswer={correctAnswer} />
       )}
     </Box>
   );

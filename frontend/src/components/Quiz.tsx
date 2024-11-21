@@ -24,11 +24,16 @@ export default function Quiz({ title, questions }: QuizProps) {
 
   return (
     <Box p="md">
-      <Title order={2} mb="lg">{title}</Title>
+      <Title order={2} mb="lg">
+        {title}
+      </Title>
       <Stack>
         {questions[currentQuestionIndex] && (
           <Question
-            {...questions[currentQuestionIndex]}
+            id={questions[currentQuestionIndex].id}
+            question={questions[currentQuestionIndex].question}
+            options={questions[currentQuestionIndex].options}
+            correctAnswer={questions[currentQuestionIndex].correctAnswer}
             onAnswered={handleNextQuestion}
           />
         )}
