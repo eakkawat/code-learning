@@ -7,9 +7,9 @@ import Answer from '@/models/Answer';
 export const getAllQuizzes = async (req: Request, res: Response) => {
   try {
     const quizzes = await Quiz.find();
-    res.status(200).send(quizzes);
+    res.status(200).json(quizzes);
   } catch (error) {
-    res.status(500).send({ message: 'Error retrieving quizzes', error });
+    res.status(500).json({ message: 'Error retrieving quizzes', error });
   }
 };
 
