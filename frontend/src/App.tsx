@@ -30,7 +30,7 @@ const sampleQuiz = {
 function App() {
   return (
     <Container size="sm" py="xl">
-      <Quiz {...sampleQuiz} />
+      <Quiz id={sampleQuiz.id} title={sampleQuiz.title} questions={sampleQuiz.questions} />
       <UserList />
     </Container>
   );
