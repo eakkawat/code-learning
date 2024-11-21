@@ -7,7 +7,7 @@ import {
   getQuestionById,
   createQuestion,
   submitAnswer,
-} from '../controllers/quiz.controller';
+} from '@/controllers/quiz.controller';
 
 const router = Router();
 

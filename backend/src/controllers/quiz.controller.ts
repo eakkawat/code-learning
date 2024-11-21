@@ -7,9 +7,9 @@ import Answer from '@/models/Answer';
 export const getAllQuizzes = async (req: Request, res: Response) => {
   try {
     const quizzes = await Quiz.find();
-    res.status(200).json(quizzes);
+    res.status(200).send(quizzes);
   } catch (error) {
-    res.status(500).json({ message: 'Error retrieving quizzes', error });
+    res.status(500).send({ message: 'Error retrieving quizzes', error });
   }
 };
 
@@ -83,7 +83,8 @@ export const submitAnswer = async (req: Request, res: Response) => {
   try {
     const question = await Question.findById(question_id);
     if (!question) {
-      return res.status(404).json({ message: 'Question not found' });
+      res.status(404).json({ message: 'Question not found' });
+      return;
     }
     const result = question.correct_answer === answer ? 'correct' : 'incorrect';
     const newAnswer = new Answer({ question_id, user_id, answer, result });
