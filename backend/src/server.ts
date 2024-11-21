@@ -1,6 +1,7 @@
 import express from 'express';
 import mongoose from 'mongoose';
-import userRoutes from './routes/user.routes';
+import routes from '@/routes';
+import config from 'config';
 
 const app = express();
 
@@ -8,10 +9,10 @@ const app = express();
 app.use(express.json());
 
 // Routes
-app.use('/api', userRoutes);
+routes(app);
 
 // Database connection
-mongoose.connect('mongodb://localhost:27017/mydatabase', {});
+mongoose.connect(config.get<string>('dbUri'), {});
 
 const db = mongoose.connection;
 db.on('error', console.error.bind(console, 'connection error:'));
