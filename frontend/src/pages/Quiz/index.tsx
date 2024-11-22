@@ -1,25 +1,30 @@
-import { Button, Card, Container, Group, SimpleGrid, Text } from '@mantine/core';
+import { Button, Card, Container, Group, Text } from '@mantine/core';
 import { IconEye } from '@tabler/icons-react';
 import { useState } from 'react';
+import Question from './Question';
+import Correct from './Correct';
 
 function Quiz() {
-  // theme
-  // const theme = useMantineTheme();
+  const [selectedChoice, setSelectedChoice] = useState<string | null>(null);
+  const [isCorrect, setIsCorrect] = useState<boolean | null>(null);
 
-  // states
-  const [selectedAnswer, setSelectedAnswer] = useState<string | null>(null);
-
-  const handleAnswerClick = (answer: string) => {
-    setSelectedAnswer(answer);
+  const question = {
+    id: 'q1',
+    question: 'What is JavaScript primarily used for?',
+    options: ['Web Development', 'Database Management', 'Operating System Development', 'Mobile App Development'],
+    correctAnswer: 'Web Development',
   };
 
-  const isSelected = (answer: string) => selectedAnswer === answer;
+  const checkAnswer = () => {
+    if (selectedChoice === question.correctAnswer) {
+      setIsCorrect(true);
+    } else {
+      setIsCorrect(false);
+    }
+  };
 
   return (
-    <Container
-      size={720}
-      mt={50}
-    >
+    <Container size={720}>
       <Card
         shadow="sm"
         py={32}
@@ -41,60 +46,29 @@ function Quiz() {
             1/10
           </Text>
         </Group>
-        <Text
-          size="md"
-          mt={16}
-        >
-          What is JavaScript primarily used for?
-        </Text>
-
-        <SimpleGrid
-          cols={2}
-          mt={40}
-        >
-          <Button
-            variant="light"
-            color={isSelected('Web development') ? 'blue' : 'gray'}
-            size="md"
-            onClick={() => handleAnswerClick('Web development')}
-          >
-            Web development
-          </Button>
-          <Button
-            variant="light"
-            color={isSelected('Database management') ? 'blue' : 'gray'}
-            size="md"
-            onClick={() => handleAnswerClick('Database management')}
-          >
-            Database management
-          </Button>
-          <Button
-            variant="light"
-            color={isSelected('Operating system development') ? 'blue' : 'gray'}
-            size="md"
-            onClick={() => handleAnswerClick('Operating system development')}
-          >
-            Operating system development
-          </Button>
-          <Button
-            variant="light"
-            color={isSelected('Mobile app development') ? 'blue' : 'gray'}
-            size="md"
-            onClick={() => handleAnswerClick('Mobile app development')}
-          >
-            Mobile app development
-          </Button>
-        </SimpleGrid>
-        <Button
-          mt={96}
-          variant="outline"
-          radius="xl"
-          color="blue"
-          rightSection={<IconEye size={14} />}
-          style={{ width: 'fit-content', marginInline: 'auto' }}
-        >
-          Check answer
-        </Button>
+        {isCorrect === null ? (
+          <>
+            <Question
+              id={question.id}
+              question={question.question}
+              options={question.options}
+              onSelect={(choice: string) => setSelectedChoice(choice)}
+            />
+            <Button
+              mt={48}
+              variant="outline"
+              radius="xl"
+              color="blue"
+              rightSection={<IconEye size={24} />}
+              style={{ width: 'fit-content', marginInline: 'auto' }}
+              onClick={checkAnswer}
+            >
+              Check answer
+            </Button>
+          </>
+        ) : (
+          <Correct question={question.question} />
+        )}
       </Card>
     </Container>
   );

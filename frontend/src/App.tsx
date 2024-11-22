@@ -14,7 +14,7 @@ function App() {
       <header>
         <Navbar />
       </header>
-      <main>
+      <main style={{ marginBlock: '30px' }}>
         <Routes>
           <Route
             path="/"
