@@ -3,16 +3,30 @@
 import { Route, Routes } from 'react-router-dom';
 import Quiz from './pages/Quiz';
 import Home from './pages/Home';
+import Navbar from './components/Navbar';
 
 function App() {
   return (
     // <Container size="sm" py="xl">
     //   <Quiz id={sampleQuiz.id} title={sampleQuiz.title} questions={sampleQuiz.questions} />
     // </Container>
-    <Routes>
-      <Route path="/" element={<Home />} />
-      <Route path="/quiz" element={<Quiz />} />
-    </Routes>
+    <>
+      <header>
+        <Navbar />
+      </header>
+      <main>
+        <Routes>
+          <Route
+            path="/"
+            element={<Home />}
+          />
+          <Route
+            path="/quiz"
+            element={<Quiz />}
+          />
+        </Routes>
+      </main>
+    </>
   );
 }
 

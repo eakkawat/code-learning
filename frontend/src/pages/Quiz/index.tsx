@@ -1,33 +1,87 @@
 import { Button, Card, Container, Group, SimpleGrid, Text } from '@mantine/core';
-import { IconArrowRight } from '@tabler/icons-react';
+import { IconEye } from '@tabler/icons-react';
+import { useState } from 'react';
 
 function Quiz() {
+  // theme
+  // const theme = useMantineTheme();
+
+  // states
+  const [selectedAnswer, setSelectedAnswer] = useState<string | null>(null);
+
+  const handleAnswerClick = (answer: string) => {
+    setSelectedAnswer(answer);
+  };
+
+  const isSelected = (answer: string) => selectedAnswer === answer;
+
   return (
-    <Container size={720} mt={50}>
-      <Card shadow="sm" py={32} px={40} radius="md" withBorder>
+    <Container
+      size={720}
+      mt={50}
+    >
+      <Card
+        shadow="sm"
+        py={32}
+        px={40}
+        radius="md"
+        withBorder
+      >
         <Group justify="space-between">
-          <Text size="lg" fw={500}>
+          <Text
+            size="lg"
+            fw={500}
+          >
             Javascript
           </Text>
-          <Text size="lg" fw={500}>
+          <Text
+            size="lg"
+            fw={500}
+          >
             1/10
           </Text>
         </Group>
-        <Text size="md" mt={16}>
+        <Text
+          size="md"
+          mt={16}
+        >
           What is JavaScript primarily used for?
         </Text>
 
-        <SimpleGrid cols={2} mt={40}>
-          <Button variant="light" color="gray" size="md">
+        <SimpleGrid
+          cols={2}
+          mt={40}
+        >
+          <Button
+            variant="light"
+            color={isSelected('Web development') ? 'blue' : 'gray'}
+            size="md"
+            onClick={() => handleAnswerClick('Web development')}
+          >
             Web development
           </Button>
-          <Button variant="light" color="gray" size="md">
+          <Button
+            variant="light"
+            color={isSelected('Database management') ? 'blue' : 'gray'}
+            size="md"
+            onClick={() => handleAnswerClick('Database management')}
+          >
             Database management
           </Button>
-          <Button variant="light" color="gray" size="md">
+          <Button
+            variant="light"
+            color={isSelected('Operating system development') ? 'blue' : 'gray'}
+            size="md"
+            onClick={() => handleAnswerClick('Operating system development')}
+          >
             Operating system development
           </Button>
-          <Button variant="light" color="gray" size="md">
+          <Button
+            variant="light"
+            color={isSelected('Mobile app development') ? 'blue' : 'gray'}
+            size="md"
+            onClick={() => handleAnswerClick('Mobile app development')}
+          >
             Mobile app development
           </Button>
         </SimpleGrid>
@@ -36,7 +90,7 @@ function Quiz() {
           variant="outline"
           radius="xl"
           color="blue"
-          rightSection={<IconArrowRight size={14} />}
+          rightSection={<IconEye size={14} />}
           style={{ width: 'fit-content', marginInline: 'auto' }}
         >
           Check answer
