@@ -1,36 +1,18 @@
-import { Container } from '@mantine/core';
-import Quiz from '@/components/Quiz';
-
-const sampleQuiz = {
-  id: '1',
-  title: 'JavaScript Fundamentals',
-  questions: [
-    {
-      id: 'q1',
-      question: 'What is JavaScript primarily used for?',
-      options: ['Web Development', 'Database Management', 'Operating System Development', 'Mobile App Development'],
-      correctAnswer: 'Web Development',
-    },
-    {
-      id: 'q2',
-      question: 'Which keyword is used to declare variables in JavaScript?',
-      options: ['var', 'let', 'const', 'All of the above'],
-      correctAnswer: 'All of the above',
-    },
-    {
-      id: 'q3',
-      question: "What is the result of 2 + '2' in JavaScript?",
-      options: ['4', '22', 'NaN', 'Error'],
-      correctAnswer: '22',
-    },
-  ],
-};
+// import { Container } from '@mantine/core';
+// import Quiz from '@/components/Quiz';
+import { Route, Routes } from 'react-router-dom';
+import Quiz from './pages/Quiz';
+import Home from './pages/Home';
 
 function App() {
   return (
-    <Container size="sm" py="xl">
-      <Quiz id={sampleQuiz.id} title={sampleQuiz.title} questions={sampleQuiz.questions} />
-    </Container>
+    // <Container size="sm" py="xl">
+    //   <Quiz id={sampleQuiz.id} title={sampleQuiz.title} questions={sampleQuiz.questions} />
+    // </Container>
+    <Routes>
+      <Route path="/" element={<Home />} />
+      <Route path="/quiz" element={<Quiz />} />
+    </Routes>
   );
 }
 

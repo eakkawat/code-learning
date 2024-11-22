@@ -1,4 +1,4 @@
 function index() {
-  return <div>test</div>;
+  return <div>Welcome home</div>;
 }
 export default index;
