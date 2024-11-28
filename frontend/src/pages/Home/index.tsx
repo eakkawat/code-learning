@@ -1,5 +1,5 @@
 import { Badge, Button, Card, Container, Flex, Group, Text } from '@mantine/core';
-import GetQuizzes from './getQuizzes';
+import GetQuizzes from '@/hooks/getQuizzes';
 import { Quiz } from '@/types/quiz';
 
 function index() {
