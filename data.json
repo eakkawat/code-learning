@@ -1,0 +1,202 @@
+[
+  {
+    "subjectId": "s1",
+    "subjectName": "JavaScript",
+    "level": "Beginner",
+    "explain": "JavaScript is a high-level, interpreted programming language primarily used for web development. It allows for dynamic content and interactivity on websites.",
+    "id": "q1",
+    "question": "What is JavaScript primarily used for?",
+    "options": ["Web Development", "Database Management", "Operating System Development", "Mobile App Development"],
+    "correctAnswer": "Web Development"
+  },
+  {
+    "subjectId": "s1",
+    "subjectName": "JavaScript",
+    "level": "Beginner",
+    "explain": "JavaScript is often used alongside HTML and CSS to create interactive web pages.",
+    "id": "q2",
+    "question": "Which of the following is NOT a common use of JavaScript?",
+    "options": ["Creating animations", "Handling form submissions", "Managing databases", "Updating content dynamically"],
+    "correctAnswer": "Managing databases"
+  },
+  {
+    "subjectId": "s1",
+    "subjectName": "JavaScript",
+    "level": "Beginner",
+    "explain": "JavaScript can be used to validate user input before it is sent to the server.",
+    "id": "q3",
+    "question": "What is a common use of JavaScript in web forms?",
+    "options": ["Styling the form", "Validating user input", "Storing form data", "Sending emails"],
+    "correctAnswer": "Validating user input"
+  },
+  {
+    "subjectId": "s1",
+    "subjectName": "JavaScript",
+    "level": "Beginner",
+    "explain": "JavaScript is an interpreted language, meaning it is executed directly by the browser without the need for compilation.",
+    "id": "q4",
+    "question": "What does it mean for JavaScript to be an interpreted language?",
+    "options": ["It requires a compiler", "It is executed directly by the browser", "It is only used on servers", "It is only used on mobile devices"],
+    "correctAnswer": "It is executed directly by the browser"
+  },
+  {
+    "subjectId": "s1",
+    "subjectName": "JavaScript",
+    "level": "Beginner",
+    "explain": "JavaScript is a dynamically typed language, meaning variables can hold any type of data and can change type during execution.",
+    "id": "q5",
+    "question": "What is a key characteristic of JavaScript's type system?",
+    "options": ["Statically typed", "Dynamically typed", "Type-safe", "Type-inferred"],
+    "correctAnswer": "Dynamically typed"
+  },
+  {
+    "subjectId": "s1",
+    "subjectName": "JavaScript",
+    "level": "Beginner",
+    "explain": "JavaScript uses curly braces `{}` to define code blocks.",
+    "id": "q6",
+    "question": "Which symbol is used to define code blocks in JavaScript?",
+    "options": ["Parentheses ()", "Square brackets []", "Curly braces {}", "Angle brackets <>"],
+    "correctAnswer": "Curly braces {}"
+  },
+  {
+    "subjectId": "s1",
+    "subjectName": "JavaScript",
+    "level": "Beginner",
+    "explain": "JavaScript uses the `var`, `let`, and `const` keywords to declare variables.",
+    "id": "q7",
+    "question": "Which keyword is used to declare a variable in JavaScript?",
+    "options": ["variable", "let", "const", "declare"],
+    "correctAnswer": "let"
+  },
+  {
+    "subjectId": "s1",
+    "subjectName": "JavaScript",
+    "level": "Beginner",
+    "explain": "JavaScript uses the `if` statement to execute code based on a condition.",
+    "id": "q8",
+    "question": "Which statement is used to execute code based on a condition in JavaScript?",
+    "options": ["if", "else", "switch", "for"],
+    "correctAnswer": "if"
+  },
+  {
+    "subjectId": "s1",
+    "subjectName": "JavaScript",
+    "level": "Beginner",
+    "explain": "JavaScript uses the `for` loop to iterate over a block of code a number of times.",
+    "id": "q9",
+    "question": "Which loop is used to iterate over a block of code a number of times in JavaScript?",
+    "options": ["while", "do...while", "for", "foreach"],
+    "correctAnswer": "for"
+  },
+  {
+    "subjectId": "s1",
+    "subjectName": "JavaScript",
+    "level": "Beginner",
+    "explain": "JavaScript uses the `function` keyword to define a function.",
+    "id": "q10",
+    "question": "Which keyword is used to define a function in JavaScript?",
+    "options": ["method", "function", "procedure", "subroutine"],
+    "correctAnswer": "function"
+  },
+  {
+    "subjectId": "s1",
+    "subjectName": "JavaScript",
+    "level": "Beginner",
+    "explain": "JavaScript uses the `return` statement to return a value from a function.",
+    "id": "q11",
+    "question": "Which statement is used to return a value from a function in JavaScript?",
+    "options": ["yield", "return", "break", "continue"],
+    "correctAnswer": "return"
+  },
+  {
+    "subjectId": "s1",
+    "subjectName": "JavaScript",
+    "level": "Beginner",
+    "explain": "JavaScript uses the `console.log()` method to print messages to the console.",
+    "id": "q12",
+    "question": "Which method is used to print messages to the console in JavaScript?",
+    "options": ["print()", "log()", "console.log()", "debug()"],
+    "correctAnswer": "console.log()"
+  },
+  {
+    "subjectId": "s1",
+    "subjectName": "JavaScript",
+    "level": "Beginner",
+    "explain": "JavaScript uses the `===` operator to check for strict equality.",
+    "id": "q13",
+    "question": "Which operator is used to check for strict equality in JavaScript?",
+    "options": ["==", "===", "!=", "!=="],
+    "correctAnswer": "==="
+  },
+  {
+    "subjectId": "s1",
+    "subjectName": "JavaScript",
+    "level": "Beginner",
+    "explain": "JavaScript uses the `&&` operator for logical AND.",
+    "id": "q14",
+    "question": "Which operator is used for logical AND in JavaScript?",
+    "options": ["||", "&&", "!", "??"],
+    "correctAnswer": "&&"
+  },
+  {
+    "subjectId": "s1",
+    "subjectName": "JavaScript",
+    "level": "Beginner",
+    "explain": "JavaScript uses the `||` operator for logical OR.",
+    "id": "q15",
+    "question": "Which operator is used for logical OR in JavaScript?",
+    "options": ["&&", "||", "!", "??"],
+    "correctAnswer": "||"
+  },
+  {
+    "subjectId": "s1",
+    "subjectName": "JavaScript",
+    "level": "Beginner",
+    "explain": "JavaScript uses the `!` operator for logical NOT.",
+    "id": "q16",
+    "question": "Which operator is used for logical NOT in JavaScript?",
+    "options": ["&&", "||", "!", "??"],
+    "correctAnswer": "!"
+  },
+  {
+    "subjectId": "s1",
+    "subjectName": "JavaScript",
+    "level": "Beginner",
+    "explain": "JavaScript uses the `typeof` operator to determine the type of a variable.",
+    "id": "q17",
+    "question": "Which operator is used to determine the type of a variable in JavaScript?",
+    "options": ["type", "typeof", "instanceof", "class"],
+    "correctAnswer": "typeof"
+  },
+  {
+    "subjectId": "s1",
+    "subjectName": "JavaScript",
+    "level": "Beginner",
+    "explain": "JavaScript uses the `Array` object to create and manipulate arrays.",
+    "id": "q18",
+    "question": "Which object is used to create and manipulate arrays in JavaScript?",
+    "options": ["List", "Array", "Collection", "Set"],
+    "correctAnswer": "Array"
+  },
+  {
+    "subjectId": "s1",
+    "subjectName": "JavaScript",
+    "level": "Beginner",
+    "explain": "JavaScript uses the `Object` object to create and manipulate objects.",
+    "id": "q19",
+    "question": "Which object is used to create and manipulate objects in JavaScript?",
+    "options": ["Class", "Object", "Instance", "Prototype"],
+    "correctAnswer": "Object"
+  },
+  {
+    "subjectId": "s1",
+    "subjectName": "JavaScript",
+    "level": "Beginner",
+    "explain": "JavaScript uses the `Date` object to work with dates and times.",
+    "id": "q20",
+    "question": "Which object is used to work with dates and times in JavaScript?",
+    "options": ["Time", "Date", "Calendar", "Moment"],
+    "correctAnswer": "Date"
+  }
+]
