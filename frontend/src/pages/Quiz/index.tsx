@@ -1,20 +1,16 @@
 import { Button, Card, Container, Group, Text } from '@mantine/core';
 import { IconEye } from '@tabler/icons-react';
 import { useState } from 'react';
+import { useParams } from 'react-router-dom';
 import Question from './Question';
 import Result from './Result';
 import Finish from './Finish';
+import useQuestions from '@/hooks/question';
 
-interface QuizProps {
-  questions: {
-    id: string;
-    question: string;
-    options: string[];
-    correctAnswer: string;
-  }[];
-}
+function Quiz() {
+  const { id: quizId } = useParams();
+  const { questions, error } = useQuestions(quizId);
 
-function Quiz({ questions }: QuizProps) {
   const [selectedChoice, setSelectedChoice] = useState<string | null>(null);
   const [isCorrect, setIsCorrect] = useState<boolean | null>(null);
   const [currentQuestionIndex, setCurrentQuestionIndex] = useState(0);
@@ -40,6 +36,8 @@ function Quiz({ questions }: QuizProps) {
       setIsCorrect(false);
     }
   };
+
+  if (error) return <div>Error: {error}</div>;
 
   if (finishQuiz)
     return (

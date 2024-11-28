@@ -1,4 +1,4 @@
 function index() {
-  return <div>index</div>;
+  return <p>Not found 404</p>;
 }
 export default index;

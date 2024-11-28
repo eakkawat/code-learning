@@ -1,9 +1,11 @@
 import { Badge, Button, Card, Container, Flex, Group, Text } from '@mantine/core';
-import GetQuizzes from '@/hooks/getQuizzes';
-import { Quiz } from '@/types/quiz';
+import { useNavigate } from 'react-router-dom';
+import useQuizzes from '@/hooks/quiz';
+import { IQuiz } from '@/types/quiz';
 
-function index() {
-  const quizzes = GetQuizzes();
+function HomePage() {
+  const quizzes = useQuizzes();
+  const navigate = useNavigate();
 
   return (
     <Container>
@@ -11,7 +13,7 @@ function index() {
         gap={8}
         wrap="wrap"
       >
-        {quizzes.map((quiz: Quiz) => (
+        {quizzes.map((quiz: IQuiz) => (
           <Card
             key={quiz.title}
             shadow="sm"
@@ -33,6 +35,8 @@ function index() {
               mt="lg"
               variant="filled"
               color="blue"
+              // eslint-disable-next-line no-underscore-dangle
+              onClick={() => navigate(`/quiz/${quiz._id}`)}
             >
               Take Quiz
             </Button>
@@ -42,4 +46,4 @@ function index() {
     </Container>
   );
 }
-export default index;
+export default HomePage;
