@@ -2,26 +2,53 @@ import { Button, Card, Container, Group, Text } from '@mantine/core';
 import { IconEye } from '@tabler/icons-react';
 import { useState } from 'react';
 import Question from './Question';
-import Correct from './Correct';
+import Result from './Result';
+import Finish from './Finish';
 
-function Quiz() {
+interface QuizProps {
+  questions: {
+    id: string;
+    question: string;
+    options: string[];
+    correctAnswer: string;
+  }[];
+}
+
+function Quiz({ questions }: QuizProps) {
   const [selectedChoice, setSelectedChoice] = useState<string | null>(null);
   const [isCorrect, setIsCorrect] = useState<boolean | null>(null);
+  const [currentQuestionIndex, setCurrentQuestionIndex] = useState(0);
+  const [score, setScore] = useState<number>(0);
 
-  const question = {
-    id: 'q1',
-    question: 'What is JavaScript primarily used for?',
-    options: ['Web Development', 'Database Management', 'Operating System Development', 'Mobile App Development'],
-    correctAnswer: 'Web Development',
+  const finishQuiz = currentQuestionIndex > questions.length - 1;
+
+  const handleNextQuestion = () => {
+    setCurrentQuestionIndex(currentQuestionIndex + 1);
+    setSelectedChoice(null);
+    setIsCorrect(null);
+  };
+
+  const handleTryAgain = () => {
+    setIsCorrect(null);
   };
 
   const checkAnswer = () => {
-    if (selectedChoice === question.correctAnswer) {
+    if (selectedChoice === questions[currentQuestionIndex].correctAnswer) {
       setIsCorrect(true);
+      setScore(score + 1);
     } else {
       setIsCorrect(false);
     }
   };
+
+  if (finishQuiz)
+    return (
+      <Finish
+        subject="Javascript - beginner"
+        score={score}
+        numOfQuestions={questions.length}
+      />
+    );
 
   return (
     <Container size={720}>
@@ -43,15 +70,16 @@ function Quiz() {
             size="lg"
             fw={500}
           >
-            1/10
+            {/* Display progress of the quiz */}
+            {currentQuestionIndex + 1}/{questions.length}
           </Text>
         </Group>
         {isCorrect === null ? (
           <>
             <Question
-              id={question.id}
-              question={question.question}
-              options={question.options}
+              id={questions[currentQuestionIndex].id}
+              question={questions[currentQuestionIndex].question}
+              options={questions[currentQuestionIndex].options}
               onSelect={(choice: string) => setSelectedChoice(choice)}
             />
             <Button
@@ -67,7 +95,13 @@ function Quiz() {
             </Button>
           </>
         ) : (
-          <Correct question={question.question} />
+          <Result
+            nextQuestion={handleNextQuestion}
+            tryAgain={handleTryAgain}
+            isCorrect={isCorrect}
+            correctAnswer={questions[currentQuestionIndex].correctAnswer}
+            question={questions[currentQuestionIndex].question}
+          />
         )}
       </Card>
     </Container>

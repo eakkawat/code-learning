@@ -1,20 +1,12 @@
 [
   {
+    "subjectId": "s1",
+    "subjectName": "JavaScript",
+    "level": "Beginner",
+    "explain": "JavaScript is a high-level, interpreted programming language primarily used for web development. It allows for dynamic content and interactivity on websites.",
     "id": "q1",
     "question": "What is JavaScript primarily used for?",
     "options": ["Web Development", "Database Management", "Operating System Development", "Mobile App Development"],
     "correctAnswer": "Web Development"
-  },
-  {
-    "id": "q2",
-    "question": "Which keyword is used to declare variables in JavaScript?",
-    "options": ["var", "let", "const", "All of the above"],
-    "correctAnswer": "All of the above"
-  },
-  {
-    "id": "q3",
-    "question": "What is the result of 2 + '2' in JavaScript?",
-    "options": ["4", "22", "NaN", "Error"],
-    "correctAnswer": "22"
   }
 ]
