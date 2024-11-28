@@ -1,5 +1,5 @@
 import axios from 'axios';
-import { User } from '@/types/User';
+import { User } from '@/types/user';
 
 const axiosInstance = axios.create({
   baseURL: 'http://localhost:5000',
