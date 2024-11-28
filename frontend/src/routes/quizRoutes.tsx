@@ -5,7 +5,7 @@ import Quiz from '../pages/Quiz';
 const quizRoutes = [
   <Route
     key="quiz"
-    path="/quiz"
+    path="quiz"
     element={<Quiz questions={questions} />}
   />,
 ];

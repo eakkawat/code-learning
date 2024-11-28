@@ -86,7 +86,7 @@ export const submitAnswer = async (req: Request, res: Response) => {
       res.status(404).json({ message: 'Question not found' });
       return;
     }
-    const result = question.correct_answer === answer ? 'correct' : 'incorrect';
+    const result = question.correctAnswer === answer ? 'correct' : 'incorrect';
     const newAnswer = new Answer({ question_id, user_id, answer, result });
     await newAnswer.save();
     res.status(201).json(newAnswer);
